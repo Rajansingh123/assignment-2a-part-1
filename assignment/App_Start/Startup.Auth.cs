@@ -45,24 +45,24 @@ namespace assignment
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            //Uncomment the following lines to enable logging in with third party login providers
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "a89a1f8d-d1ec-4278-9dc1-e41e3b86726c",
+                clientSecret: "omhbGLK97:emcSIAD556](@");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "142982966422920",
+              appSecret: "707d4ab334d74546f1ae6634c86c0ec7");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "267345754439-jsv0ldqn5kqbt4l0o2i250rg5p7vbtm9.apps.googleusercontent.com",
+                ClientSecret = "HLMPGldT_PNEjeplKc7ZbVHs"
+            });
         }
     }
 }

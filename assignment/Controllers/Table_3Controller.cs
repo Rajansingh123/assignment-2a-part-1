@@ -10,6 +10,7 @@ using assignment.Models;
 
 namespace assignment.Controllers
 {
+    
     public class Table_3Controller : Controller
     {
         private Model1 db = new Model1();
@@ -37,6 +38,7 @@ namespace assignment.Controllers
         }
 
         // GET: Table_3/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.carid = new SelectList(db.Table_1, "Carid", "cars");
@@ -62,6 +64,7 @@ namespace assignment.Controllers
         }
 
         // GET: Table_3/Edit/5
+        [Authorize]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -95,6 +98,7 @@ namespace assignment.Controllers
         }
 
         // GET: Table_3/Delete/5
+        [Authorize]
         public ActionResult Delete(string id)
         {
             if (id == null)

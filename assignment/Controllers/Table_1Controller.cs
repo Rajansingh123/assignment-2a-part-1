@@ -10,6 +10,7 @@ using assignment.Models;
 
 namespace assignment.Controllers
 {
+    
     public class Table_1Controller : Controller
     {
         private Model1 db = new Model1();
@@ -19,7 +20,7 @@ namespace assignment.Controllers
         {
             return View(db.Table_1.ToList());
         }
-
+        [AllowAnonymous]
         // GET: Table_1/Details/5
         public ActionResult Details(int? id)
         {
@@ -36,6 +37,7 @@ namespace assignment.Controllers
         }
 
         // GET: Table_1/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +61,7 @@ namespace assignment.Controllers
         }
 
         // GET: Table_1/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +81,7 @@ namespace assignment.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "Carid,cars,companyname,price")] Table_1 table_1)
         {
             if (ModelState.IsValid)
@@ -90,6 +94,7 @@ namespace assignment.Controllers
         }
 
         // GET: Table_1/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
