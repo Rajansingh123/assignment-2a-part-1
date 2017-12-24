@@ -6,19 +6,30 @@ namespace assignment.Models
     public class EFTable_1Repository : ITable_1Repository
     {
 
-        Table_1 db = new Table_1();
+        Model1 db = new Model1();
 
         public IQueryable<Table_3> Table_3 { get { return db.Table_3; } }
 
-        public void Delete(Table_3 table_3)
+        public IQueryable<Table_1> Table_1 { get { return db.Table_1; } }
+
+        public void Delete(Table_1 table_1)
         {
-            db.Table_3.Remove(table_3);
-            db.Save()
+            db.Table_1.Remove(table_1);
+            db.SaveChanges();
         }
 
-        public Table_3 Save(Table_3 table_3)
+        public Table_1 Save(Table_1 table_1)
         {
-            throw new NotImplementedException();
+            if (table_1.Carid == 0 )
+            {
+                db.Table_1.Add(table_1);
+            }
+            else
+                {
+                db.Entry(table_1).State = System.Data.Entity.EntityState.Modified;
+                }
+            db.SaveChanges();
+            return table_1;
         }
     }
 }

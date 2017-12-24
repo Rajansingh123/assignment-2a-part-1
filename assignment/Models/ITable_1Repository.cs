@@ -9,7 +9,10 @@ namespace assignment.Models
     public interface ITable_1Repository
     {
         IQueryable<Table_3> Table_3 { get; }
-        Table_3 Save(Table_3 table_3);
-        void Delete(Table_3 table_3);
+        IQueryable<Table_1> Table_1 { get; }
+
+        Table_1 Save(Table_1 table_3);
+        void Delete(Table_1 table_3);
+
     }
 }
